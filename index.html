@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Чек Лист — ISO/IEC 27001:2022</title>
+  <meta name="description" content="Чек лист за тестване на ново разработена информационна система съгласно ISO/IEC 27001:2022" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="app-header">
+    <div class="header-badge">ISO/IEC 27001:2022</div>
+    <h1 class="header-title">Чек Лист</h1>
+    <p class="header-subtitle">Тестване на информационна система</p>
+
+    <!-- Progress ring -->
+    <div class="progress-ring-wrapper">
+      <svg class="progress-ring" viewBox="0 0 120 120">
+        <circle class="ring-bg" cx="60" cy="60" r="50" />
+        <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="50" />
+      </svg>
+      <div class="ring-text">
+        <span id="checkedCount">0</span>
+        <span class="ring-total">/ 69</span>
+      </div>
+    </div>
+
+    <!-- Global progress bar -->
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+    <p class="progress-label" id="progressLabel">0% завършено</p>
+  </header>
+
+  <!-- ═══════════════════════ MAIN ═══════════════════════ -->
+  <main class="checklist-main" id="checklistMain">
+
+    <!-- Section A.1 -->
+    <section class="checklist-section" data-section="a1">
+      <div class="section-header" onclick="toggleSection('a1')">
+        <div class="section-info">
+          <span class="section-tag">А.1</span>
+          <span class="section-title">Функционално тестване</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a1">0/7</span>
+          <span class="chevron" id="chevron-a1">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a1">
+        <div class="checklist-item" data-id="1" data-section="a1" onclick="toggleItem(this)">
+          <div class="item-check" id="check-1"><span class="checkmark">✓</span></div>
+          <div class="item-content">
+            <span class="item-num">1</span>
+            <span class="item-text">Всички функционални изисквания от техническото задание са реализирани и работят коректно</span>
+          </div>
+        </div>
+        <div class="checklist-item" data-id="2" data-section="a1" onclick="toggleItem(this)">
+          <div class="item-check" id="check-2"><span class="checkmark">✓</span></div>
+          <div class="item-content">
+            <span class="item-num">2</span>
+            <span class="item-text">Бизнес логиката на системата функционира според спецификацията (входни данни, обработка, резултати)</span>
+          </div>
+        </div>
+        <div class="checklist-item" data-id="3" data-section="a1" onclick="toggleItem(this)">
+          <div class="item-check" id="check-3"><span class="checkmark">✓</span></div>
+          <div class="item-content">
+            <span class="item-num">3</span>
+            <span class="item-text">Модулите на системата работят коректно поотделно (unit тестване)</span>
+          </div>
+        </div>
+        <div class="checklist-item" data-id="4" data-section="a1" onclick="toggleItem(this)">
+          <div class="item-check" id="check-4"><span class="checkmark">✓</span></div>
+          <div class="item-content">
+            <span class="item-num">4</span>
+            <span class="item-text">Интеграцията между отделните модули и подсистеми е тествана и работи без грешки</span>
+          </div>
+        </div>
+        <div class="checklist-item" data-id="5" data-section="a1" onclick="toggleItem(this)">
+          <div class="item-check" id="check-5"><span class="checkmark">✓</span></div>
+          <div class="item-content">
+            <span class="item-num">5</span>
+            <span class="item-text">Системата обработва гранични стойности и невалидни входни данни правилно (error handling)</span>
+          </div>
+        </div>
+        <div class="checklist-item" data-id="6" data-section="a1" onclick="toggleItem(this)">
+          <div class="item-check" id="check-6"><span class="checkmark">✓</span></div>
+          <div class="item-content">
+            <span class="item-num">6</span>
+            <span class="item-text">Потребителският интерфейс отговаря на утвърдения графичен дизайн и UX изисквания</span>
+          </div>
+        </div>
+        <div class="checklist-item" data-id="7" data-section="a1" onclick="toggleItem(this)">
+          <div class="item-check" id="check-7"><span class="checkmark">✓</span></div>
+          <div class="item-content">
+            <span class="item-num">7</span>
+            <span class="item-text">Всички уеб форми валидират въведените данни на клиентска и сървърна страна</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.2 -->
+    <section class="checklist-section" data-section="a2">
+      <div class="section-header" onclick="toggleSection('a2')">
+        <div class="section-info">
+          <span class="section-tag">А.2</span>
+          <span class="section-title">Информационна сигурност</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a2">0/15</span>
+          <span class="chevron" id="chevron-a2">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a2">
+        <div class="checklist-item" data-id="8" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-8"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">8</span><span class="item-text">Всички уебстраници са достъпни единствено чрез HTTPS с TLS 1.2 или 1.3 (А.8.28, т.4)</span></div>
+        </div>
+        <div class="checklist-item" data-id="9" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-9"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">9</span><span class="item-text">SSL сертификатът е издаден от доверена CA, използва SHA-2 и е с валиден срок (А.8.28, т.4)</span></div>
+        </div>
+        <div class="checklist-item" data-id="10" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-10"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">10</span><span class="item-text">Тестът за сигурност на SSL/TLS конфигурацията е изпълнен чрез SSL Labs и резултатът е минимум А (А.8.28, т.5)</span></div>
+        </div>
+        <div class="checklist-item" data-id="11" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-11"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">11</span><span class="item-text">Паролите на потребителите отговарят на изискванията за комплексност: мин. 10 символа, главна/малка буква, цифра, специален символ (А.8.28, т.23)</span></div>
+        </div>
+        <div class="checklist-item" data-id="12" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-12"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">12</span><span class="item-text">Въведено е ограничение на неуспешни опити за вход: 5 опита, 3 мин. блокиране (А.8.28, т.22)</span></div>
+        </div>
+        <div class="checklist-item" data-id="13" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-13"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">13</span><span class="item-text">Паролите се съхраняват хеширани с BCrypt, PBKDF2 или scrypt — никога в явен вид (А.8.28, т.1)</span></div>
+        </div>
+        <div class="checklist-item" data-id="14" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-14"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">14</span><span class="item-text">Системата е защитена от SQL Injection чрез параметризирани заявки / ORM (А.8.28, т.24)</span></div>
+        </div>
+        <div class="checklist-item" data-id="15" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-15"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">15</span><span class="item-text">Системата е защитена от XSS атаки — всички изходни данни са HTML-кодирани (А.8.28, т.18)</span></div>
+        </div>
+        <div class="checklist-item" data-id="16" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-16"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">16</span><span class="item-text">Системата е защитена от CSRF атаки (А.8.28, т.10)</span></div>
+        </div>
+        <div class="checklist-item" data-id="17" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-17"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">17</span><span class="item-text">Директориите на уеб сървъра не са достъпни за листване (directory listing е забранено) (А.8.28, т.28)</span></div>
+        </div>
+        <div class="checklist-item" data-id="18" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-18"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">18</span><span class="item-text">Бисквитките (cookies) имат флагове Secure и HttpOnly (А.8.28, т.29)</span></div>
+        </div>
+        <div class="checklist-item" data-id="19" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-19"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">19</span><span class="item-text">Тестовете за проникване (penetration test) са проведени и резултатите са предадени на Мениджър ИС (А.8.28, т.39)</span></div>
+        </div>
+        <div class="checklist-item" data-id="20" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-20"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">20</span><span class="item-text">Системата не съдържа Self-Signed сертификати за публични услуги (А.8.28, т.3)</span></div>
+        </div>
+        <div class="checklist-item" data-id="21" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-21"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">21</span><span class="item-text">Криптирането на данни използва AES-256 или по-силен алгоритъм; DES/3DES/TLS 1.0 не се използват (А.8.24)</span></div>
+        </div>
+        <div class="checklist-item" data-id="22" data-section="a2" onclick="toggleItem(this)">
+          <div class="item-check" id="check-22"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">22</span><span class="item-text">Ключовете за криптиране не се съхраняват заедно с криптираните данни (А.8.28, т.14)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.3 -->
+    <section class="checklist-section" data-section="a3">
+      <div class="section-header" onclick="toggleSection('a3')">
+        <div class="section-info">
+          <span class="section-tag">А.3</span>
+          <span class="section-title">Достъп и автентикация</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a3">0/7</span>
+          <span class="chevron" id="chevron-a3">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a3">
+        <div class="checklist-item" data-id="23" data-section="a3" onclick="toggleItem(this)">
+          <div class="item-check" id="check-23"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">23</span><span class="item-text">Ролевият модел за достъп е реализиран коректно — потребителите виждат само ресурсите, до които имат право (А.8.3)</span></div>
+        </div>
+        <div class="checklist-item" data-id="24" data-section="a3" onclick="toggleItem(this)">
+          <div class="item-check" id="check-24"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">24</span><span class="item-text">Административните акаунти са с двуфакторна автентикация (А.8.2, т.2)</span></div>
+        </div>
+        <div class="checklist-item" data-id="25" data-section="a3" onclick="toggleItem(this)">
+          <div class="item-check" id="check-25"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">25</span><span class="item-text">Административните пароли са минимум 12 символа; не се използват имена по подразбиране (admin, root) (А.8.2, т.3-4)</span></div>
+        </div>
+        <div class="checklist-item" data-id="26" data-section="a3" onclick="toggleItem(this)">
+          <div class="item-check" id="check-26"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">26</span><span class="item-text">Неуспешните опити за вход се регистрират в лог; акаунтът се заключва след определен брой опити (А.8.5, т.6)</span></div>
+        </div>
+        <div class="checklist-item" data-id="27" data-section="a3" onclick="toggleItem(this)">
+          <div class="item-check" id="check-27"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">27</span><span class="item-text">Паролата не се показва в явен вид при въвеждане и не се предава в явен текст по мрежата (А.8.5, т.8-9)</span></div>
+        </div>
+        <div class="checklist-item" data-id="28" data-section="a3" onclick="toggleItem(this)">
+          <div class="item-check" id="check-28"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">28</span><span class="item-text">Неактивните сесии се прекъсват автоматично след определен период (А.8.5, т.2)</span></div>
+        </div>
+        <div class="checklist-item" data-id="29" data-section="a3" onclick="toggleItem(this)">
+          <div class="item-check" id="check-29"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">29</span><span class="item-text">Достъпът до изходния код е строго ограничен чрез контролирано хранилище (А.8.4)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.4 -->
+    <section class="checklist-section" data-section="a4">
+      <div class="section-header" onclick="toggleSection('a4')">
+        <div class="section-info">
+          <span class="section-tag">А.4</span>
+          <span class="section-title">Защита на данните и резервиране</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a4">0/6</span>
+          <span class="chevron" id="chevron-a4">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a4">
+        <div class="checklist-item" data-id="30" data-section="a4" onclick="toggleItem(this)">
+          <div class="item-check" id="check-30"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">30</span><span class="item-text">Чувствителни лични данни не се използват в тестова среда; използват се маскирани/псевдонимизирани данни (А.8.33, т.2)</span></div>
+        </div>
+        <div class="checklist-item" data-id="31" data-section="a4" onclick="toggleItem(this)">
+          <div class="item-check" id="check-31"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">31</span><span class="item-text">Тестовите данни за автентикация се различават от продукционните (А.8.33, т.4)</span></div>
+        </div>
+        <div class="checklist-item" data-id="32" data-section="a4" onclick="toggleItem(this)">
+          <div class="item-check" id="check-32"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">32</span><span class="item-text">След приключване на тестовете, тестовите данни са заличени необратимо (А.8.33, т.5)</span></div>
+        </div>
+        <div class="checklist-item" data-id="33" data-section="a4" onclick="toggleItem(this)">
+          <div class="item-check" id="check-33"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">33</span><span class="item-text">Реализиран е ежедневен автоматичен backup на данните, съхраняван извън инфраструктурата (А.8.28, т.2)</span></div>
+        </div>
+        <div class="checklist-item" data-id="34" data-section="a4" onclick="toggleItem(this)">
+          <div class="item-check" id="check-34"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">34</span><span class="item-text">Резервните копия са тествани за успешно възстановяване (restore test) (А.8.13)</span></div>
+        </div>
+        <div class="checklist-item" data-id="35" data-section="a4" onclick="toggleItem(this)">
+          <div class="item-check" id="check-35"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">35</span><span class="item-text">Маскирането на лични данни е реализирано (токенизация/псевдонимизация/криптиране) съгласно Политиката за защита на лични данни (А.8.11)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.5 -->
+    <section class="checklist-section" data-section="a5">
+      <div class="section-header" onclick="toggleSection('a5')">
+        <div class="section-info">
+          <span class="section-tag">А.5</span>
+          <span class="section-title">Одитни записи и проследимост</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a5">0/6</span>
+          <span class="chevron" id="chevron-a5">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a5">
+        <div class="checklist-item" data-id="36" data-section="a5" onclick="toggleItem(this)">
+          <div class="item-check" id="check-36"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">36</span><span class="item-text">Системата разполага с модул за одитна следа — всяко действие (добавяне, изтриване, модификация, четене) се записва (А.8.28, т.36)</span></div>
+        </div>
+        <div class="checklist-item" data-id="37" data-section="a5" onclick="toggleItem(this)">
+          <div class="item-check" id="check-37"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">37</span><span class="item-text">Всеки запис в одитната следа съдържа: уникален номер, точно време, вид, данни за системата, компонент, приоритет, описание и данни за събитието (А.8.28, т.36)</span></div>
+        </div>
+        <div class="checklist-item" data-id="38" data-section="a5" onclick="toggleItem(this)">
+          <div class="item-check" id="check-38"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">38</span><span class="item-text">Времето се отчита с точност до секунда (при нужда милисекунда) съгласно БДС ISO 8601:2006 (А.8.28, т.37)</span></div>
+        </div>
+        <div class="checklist-item" data-id="39" data-section="a5" onclick="toggleItem(this)">
+          <div class="item-check" id="check-39"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">39</span><span class="item-text">Всички часовници са синхронизирани с един NTP сървър (UTC) (А.8.17)</span></div>
+        </div>
+        <div class="checklist-item" data-id="40" data-section="a5" onclick="toggleItem(this)">
+          <div class="item-check" id="check-40"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">40</span><span class="item-text">Лог файловете се съхраняват централизирано за минимум 12 месеца и не могат да се изтриват от потребители (А.8.15)</span></div>
+        </div>
+        <div class="checklist-item" data-id="41" data-section="a5" onclick="toggleItem(this)">
+          <div class="item-check" id="check-41"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">41</span><span class="item-text">Достъпът до лог данните е ограничен до Мениджър ИС и оторизирани специалисти (А.8.16, т.2)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.6 -->
+    <section class="checklist-section" data-section="a6">
+      <div class="section-header" onclick="toggleSection('a6')">
+        <div class="section-info">
+          <span class="section-tag">А.6</span>
+          <span class="section-title">Разделяне на среди и конфигурация</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a6">0/6</span>
+          <span class="chevron" id="chevron-a6">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a6">
+        <div class="checklist-item" data-id="42" data-section="a6" onclick="toggleItem(this)">
+          <div class="item-check" id="check-42"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">42</span><span class="item-text">Тестовата среда е физически или логически отделена от продукционната (А.8.31)</span></div>
+        </div>
+        <div class="checklist-item" data-id="43" data-section="a6" onclick="toggleItem(this)">
+          <div class="item-check" id="check-43"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">43</span><span class="item-text">Компилатори, IDE и инструменти за разработка не са инсталирани в продукционната среда (А.8.31)</span></div>
+        </div>
+        <div class="checklist-item" data-id="44" data-section="a6" onclick="toggleItem(this)">
+          <div class="item-check" id="check-44"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">44</span><span class="item-text">Тестовата среда прилага идентични контроли за сигурност, достъп и управление на уязвимости с продукционната (А.8.31)</span></div>
+        </div>
+        <div class="checklist-item" data-id="45" data-section="a6" onclick="toggleItem(this)">
+          <div class="item-check" id="check-45"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">45</span><span class="item-text">Конфигурациите по подразбиране (пароли admin/root, неизползвани портове/услуги) са сменени преди внедряване (А.8.9)</span></div>
+        </div>
+        <div class="checklist-item" data-id="46" data-section="a6" onclick="toggleItem(this)">
+          <div class="item-check" id="check-46"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">46</span><span class="item-text">Неизползваните портове и услуги са деактивирани; активните портове са документирани (А.8.9, т.4)</span></div>
+        </div>
+        <div class="checklist-item" data-id="47" data-section="a6" onclick="toggleItem(this)">
+          <div class="item-check" id="check-47"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">47</span><span class="item-text">Системата е инсталирана в изолирана среда, отделена от другите ИС (А.8.28, т.31)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.7 -->
+    <section class="checklist-section" data-section="a7">
+      <div class="section-header" onclick="toggleSection('a7')">
+        <div class="section-info">
+          <span class="section-tag">А.7</span>
+          <span class="section-title">Мрежова сигурност и филтриране</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a7">0/5</span>
+          <span class="chevron" id="chevron-a7">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a7">
+        <div class="checklist-item" data-id="48" data-section="a7" onclick="toggleItem(this)">
+          <div class="item-check" id="check-48"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">48</span><span class="item-text">Трафикът между модулите се контролира чрез правила за филтриране (IP, протокол, порт) (А.8.28, т.7)</span></div>
+        </div>
+        <div class="checklist-item" data-id="49" data-section="a7" onclick="toggleItem(this)">
+          <div class="item-check" id="check-49"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">49</span><span class="item-text">Web Application Firewall (WAF) е конфигуриран за защита от CSRF, XSS, file inclusion, SQLi (А.8.28, т.10)</span></div>
+        </div>
+        <div class="checklist-item" data-id="50" data-section="a7" onclick="toggleItem(this)">
+          <div class="item-check" id="check-50"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">50</span><span class="item-text">Всички уеб услуги (Web Services) ползват само HTTPS с TLS 1.2/1.3 и AES-256 (А.8.28, т.6)</span></div>
+        </div>
+        <div class="checklist-item" data-id="51" data-section="a7" onclick="toggleItem(this)">
+          <div class="item-check" id="check-51"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">51</span><span class="item-text">Достъпът до сайтове с лоша репутация и нелегално съдържание е забранен (А.8.23)</span></div>
+        </div>
+        <div class="checklist-item" data-id="52" data-section="a7" onclick="toggleItem(this)">
+          <div class="item-check" id="check-52"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">52</span><span class="item-text">За DNS защита е прилаган DNSSEC (А.8.28, т.31)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.8 -->
+    <section class="checklist-section" data-section="a8">
+      <div class="section-header" onclick="toggleSection('a8')">
+        <div class="section-info">
+          <span class="section-tag">А.8</span>
+          <span class="section-title">Технически и програмни изисквания</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a8">0/8</span>
+          <span class="chevron" id="chevron-a8">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a8">
+        <div class="checklist-item" data-id="53" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-53"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">53</span><span class="item-text">Не се използват библиотеки/frameworks, излезли от поддръжка или с изтичащ краен срок по време на експлоатацията (А.8.28, т.26)</span></div>
+        </div>
+        <div class="checklist-item" data-id="54" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-54"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">54</span><span class="item-text">Не се използват собствено разработени криптографски библиотеки; ползват се утвърдени (Google KeyCzar, Bouncy Castle) (А.8.28, т.13)</span></div>
+        </div>
+        <div class="checklist-item" data-id="55" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-55"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">55</span><span class="item-text">Генерирането на произволни числа за криптографски цели използва CSPRNG; Math.random не се използва (А.8.28, т.16)</span></div>
+        </div>
+        <div class="checklist-item" data-id="56" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-56"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">56</span><span class="item-text">Поверителни данни не се записват в лог файлове или места за временно съхранение (А.8.28, т.15)</span></div>
+        </div>
+        <div class="checklist-item" data-id="57" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-57"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">57</span><span class="item-text">Потребителско въвеждане е ограничено до предефинирани стойности; OQL/HQL е забранено по подразбиране (А.8.28, т.25, 33)</span></div>
+        </div>
+        <div class="checklist-item" data-id="58" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-58"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">58</span><span class="item-text">robots.txt е конфигуриран в главната директория на уеб сайта (А.8.28, т.30)</span></div>
+        </div>
+        <div class="checklist-item" data-id="59" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-59"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">59</span><span class="item-text">Спазени са изискванията на OWASP (последна версия) при проектирането и разгръщането (А.8.28, т.35)</span></div>
+        </div>
+        <div class="checklist-item" data-id="60" data-section="a8" onclick="toggleItem(this)">
+          <div class="item-check" id="check-60"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">60</span><span class="item-text">Съответствие с приложимата нормативна уредба: Закон за киберсигурност, ЗЕУ, НМИМИС, вътрешни правила (А.8.28, т.40)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.9 -->
+    <section class="checklist-section" data-section="a9">
+      <div class="section-header" onclick="toggleSection('a9')">
+        <div class="section-info">
+          <span class="section-tag">А.9</span>
+          <span class="section-title">Производителност и капацитет</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a9">0/4</span>
+          <span class="chevron" id="chevron-a9">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a9">
+        <div class="checklist-item" data-id="61" data-section="a9" onclick="toggleItem(this)">
+          <div class="item-check" id="check-61"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">61</span><span class="item-text">Проведено е натоварващо тестване (load test) — системата работи стабилно при очаквания максимален трафик (А.8.6)</span></div>
+        </div>
+        <div class="checklist-item" data-id="62" data-section="a9" onclick="toggleItem(this)">
+          <div class="item-check" id="check-62"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">62</span><span class="item-text">Системата не надвишава 80% натоварване при пиков трафик (А.8.6, т.1)</span></div>
+        </div>
+        <div class="checklist-item" data-id="63" data-section="a9" onclick="toggleItem(this)">
+          <div class="item-check" id="check-63"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">63</span><span class="item-text">Времето за отговор на системата е в приемливи граници при пиково натоварване</span></div>
+        </div>
+        <div class="checklist-item" data-id="64" data-section="a9" onclick="toggleItem(this)">
+          <div class="item-check" id="check-64"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">64</span><span class="item-text">Изискванията за капацитет са документирани и са договорени с Мениджър ИТ (А.8.6, т.2-3)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section A.10 -->
+    <section class="checklist-section" data-section="a10">
+      <div class="section-header" onclick="toggleSection('a10')">
+        <div class="section-info">
+          <span class="section-tag">А.10</span>
+          <span class="section-title">Управление на уязвимости и приемане</span>
+        </div>
+        <div class="section-right">
+          <span class="section-progress" id="prog-a10">0/5</span>
+          <span class="chevron" id="chevron-a10">▼</span>
+        </div>
+      </div>
+      <div class="section-body" id="body-a10">
+        <div class="checklist-item" data-id="65" data-section="a10" onclick="toggleItem(this)">
+          <div class="item-check" id="check-65"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">65</span><span class="item-text">Сканирането за уязвимости е извършено с одобрен инструмент (Rapid7, Burp, Qualys WAS) (А.8.8, т.2-3)</span></div>
+        </div>
+        <div class="checklist-item" data-id="66" data-section="a10" onclick="toggleItem(this)">
+          <div class="item-check" id="check-66"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">66</span><span class="item-text">Всички уязвимости с висока степен на опасност са отстранени преди внедряване в продукция (А.8.8, т.4)</span></div>
+        </div>
+        <div class="checklist-item" data-id="67" data-section="a10" onclick="toggleItem(this)">
+          <div class="item-check" id="check-67"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">67</span><span class="item-text">При открити несъответствия е изготвен и изпълнен план за отстраняване, одобрен от Мениджър ИС (А.8.29, т.1)</span></div>
+        </div>
+        <div class="checklist-item" data-id="68" data-section="a10" onclick="toggleItem(this)">
+          <div class="item-check" id="check-68"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">68</span><span class="item-text">Повторното тестване след отстраняване на несъответствия е проведено успешно (А.8.29, т.2)</span></div>
+        </div>
+        <div class="checklist-item" data-id="69" data-section="a10" onclick="toggleItem(this)">
+          <div class="item-check" id="check-69"><span class="checkmark">✓</span></div>
+          <div class="item-content"><span class="item-num">69</span><span class="item-text">Системата е готова за внедряване в продукционна среда — всички тестове са преминати успешно (А.8.29)</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER / SUBMIT ═══════════════════════ -->
+  <footer class="app-footer">
+    <div class="remaining-hint" id="remainingHint">
+      Остават <strong id="remainingCount">69</strong> непотвърдени точки
+    </div>
+    <button class="btn-finish" id="btnFinish" disabled onclick="finishChecklist()">
+      <span class="btn-icon">🔒</span>
+      <span class="btn-label">Финализирай чек листа</span>
+    </button>
+  </footer>
+
+  <!-- ═══════════════════════ SUCCESS OVERLAY ═══════════════════════ -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-card">
+      <div class="success-anim">
+        <svg class="success-ring-svg" viewBox="0 0 160 160">
+          <circle class="s-ring-bg" cx="80" cy="80" r="70" />
+          <circle class="s-ring-fill" id="sRingFill" cx="80" cy="80" r="70" />
+        </svg>
+        <div class="success-icon">✓</div>
+      </div>
+      <h2 class="success-title">Одобрено!</h2>
+      <p class="success-sub">Чек листът е успешно попълнен</p>
+      <p class="success-desc">Всички 69 точки са потвърдени.<br/>Системата е готова за внедряване в продукционна среда.</p>
+      <div class="success-badge">ISO/IEC 27001:2022 ✓</div>
+      <button class="btn-reset" onclick="resetChecklist()">Нов чек лист</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
